@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CANRBackgroundInfoTVC.h
 //  CANReports
 //
 //  Created by Abegael Jackson on 2015-07-25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CANRBackgroundInfoTVC : UITableViewController
 
 @end
-

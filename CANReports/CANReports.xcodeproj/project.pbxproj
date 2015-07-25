@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		F6CDE64F1B642B5E00992F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE64E1B642B5E00992F09 /* main.m */; };
 		F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6511B642B5E00992F09 /* AppDelegate.m */; };
-		F6CDE6551B642B5E00992F09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6541B642B5E00992F09 /* ViewController.m */; };
 		F6CDE6581B642B5E00992F09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE6561B642B5E00992F09 /* Main.storyboard */; };
 		F6CDE65A1B642B5E00992F09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE6591B642B5E00992F09 /* Images.xcassets */; };
 		F6CDE65D1B642B5E00992F09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE65B1B642B5E00992F09 /* LaunchScreen.xib */; };
 		F6CDE6691B642B5E00992F09 /* CANReportsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6681B642B5E00992F09 /* CANReportsTests.m */; };
+		F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6991B643F9400992F09 /* CANRIncident.m */; };
+		F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */; };
+		F6CDE6A01B64493800992F09 /* CANRBackgroundInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		F6CDE64E1B642B5E00992F09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6CDE6501B642B5E00992F09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6CDE6511B642B5E00992F09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F6CDE6531B642B5E00992F09 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F6CDE6541B642B5E00992F09 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F6CDE6571B642B5E00992F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6CDE6591B642B5E00992F09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F6CDE65C1B642B5E00992F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F6CDE6621B642B5E00992F09 /* CANReportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CANReportsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CDE6671B642B5E00992F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CDE6681B642B5E00992F09 /* CANReportsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CANReportsTests.m; sourceTree = "<group>"; };
+		F6CDE6981B643F9400992F09 /* CANRIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRIncident.h; sourceTree = "<group>"; };
+		F6CDE6991B643F9400992F09 /* CANRIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRIncident.m; sourceTree = "<group>"; };
+		F6CDE69B1B643FA200992F09 /* CANRPersonInvolved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRPersonInvolved.h; sourceTree = "<group>"; };
+		F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRPersonInvolved.m; sourceTree = "<group>"; };
+		F6CDE69E1B64493800992F09 /* CANRBackgroundInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoTVC.h; sourceTree = "<group>"; };
+		F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +87,11 @@
 		F6CDE64B1B642B5E00992F09 /* CANReports */ = {
 			isa = PBXGroup;
 			children = (
-				F6CDE6501B642B5E00992F09 /* AppDelegate.h */,
-				F6CDE6511B642B5E00992F09 /* AppDelegate.m */,
-				F6CDE6531B642B5E00992F09 /* ViewController.h */,
-				F6CDE6541B642B5E00992F09 /* ViewController.m */,
-				F6CDE6561B642B5E00992F09 /* Main.storyboard */,
-				F6CDE6591B642B5E00992F09 /* Images.xcassets */,
-				F6CDE65B1B642B5E00992F09 /* LaunchScreen.xib */,
+				F6CDE6961B643E3800992F09 /* Storyboard */,
+				F6CDE6941B643DF300992F09 /* Model */,
+				F6CDE6A11B64494C00992F09 /* Views */,
+				F6CDE6931B643D6C00992F09 /* Controllers */,
+				F6CDE6971B643E6100992F09 /* Resources */,
 				F6CDE64C1B642B5E00992F09 /* Supporting Files */,
 			);
 			path = CANReports;
@@ -117,6 +121,52 @@
 				F6CDE6671B642B5E00992F09 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6CDE6931B643D6C00992F09 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6CDE69E1B64493800992F09 /* CANRBackgroundInfoTVC.h */,
+				F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F6CDE6941B643DF300992F09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6CDE6501B642B5E00992F09 /* AppDelegate.h */,
+				F6CDE6511B642B5E00992F09 /* AppDelegate.m */,
+				F6CDE6981B643F9400992F09 /* CANRIncident.h */,
+				F6CDE6991B643F9400992F09 /* CANRIncident.m */,
+				F6CDE69B1B643FA200992F09 /* CANRPersonInvolved.h */,
+				F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F6CDE6961B643E3800992F09 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F6CDE65B1B642B5E00992F09 /* LaunchScreen.xib */,
+				F6CDE6561B642B5E00992F09 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		F6CDE6971B643E6100992F09 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6CDE6591B642B5E00992F09 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F6CDE6A11B64494C00992F09 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6CDE6551B642B5E00992F09 /* ViewController.m in Sources */,
+				F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */,
+				F6CDE6A01B64493800992F09 /* CANRBackgroundInfoTVC.m in Sources */,
 				F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */,
+				F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */,
 				F6CDE64F1B642B5E00992F09 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

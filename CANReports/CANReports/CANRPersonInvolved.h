@@ -13,8 +13,8 @@
 
 // Section 2: Person(s) Involved
 @property (strong, nonatomic) NSString *personInvolved;
-@property (strong, nonatomic) NSDate *personBirthdate;
-@property (assign, nonatomic) BOOL isMale;
+@property (strong, nonatomic) NSString *personBirthdate;
+@property (assign, nonatomic) BOOL personGender;
 
 
 @end

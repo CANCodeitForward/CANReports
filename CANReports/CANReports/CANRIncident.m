@@ -10,4 +10,10 @@
 
 @implementation CANRIncident
 
+-(instancetype)init{
+    self = [super init];
+    return self;
+}
+
+
 @end

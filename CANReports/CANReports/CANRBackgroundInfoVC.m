@@ -8,36 +8,34 @@
 
 #import "CANRBackgroundInfoVC.h"
 #import "XLForm.h"
-#import "FloatLabeledTextFieldCell.h"
-
-
-NSString *const kName = @"name";
-NSString *const kEmail = @"email";
-NSString *const kTwitter = @"twitter";
-NSString *const kNumber = @"number";
-NSString *const kInteger = @"integer";
-NSString *const kDecimal = @"decimal";
-NSString *const kPassword = @"password";
-NSString *const kPhone = @"phone";
-NSString *const kUrl = @"url";
-NSString *const kTextView = @"textView";
-NSString *const kNotes = @"notes";
-
-
-
-static NSString * const kCustomRowFirstRatingTag = @"CustomRowFirstRatingTag";
-static NSString * const kCustomRowSecondRatingTag = @"CustomRowSecondRatingTag";
-static NSString * const kCustomRowFloatLabeledTextFieldTag = @"CustomRowFloatLabeledTextFieldTag";
-static NSString * const kCustomRowWeekdays = @"CustomRowWeekdays";
-static NSString * const kCustomRowText = @"kCustomText";
+#import "CANRIncident.h"
 
 
 @implementation CANRBackgroundInfoVC
 
--(id)init
+-(instancetype)initWithCoder:(NSCoder *)coder
 {
-    XLFormDescriptor *backgroundForm = [XLFormDescriptor formDescriptorWithTitle:@"Text Fields"];
-    backgroundForm.assignFirstResponderOnShow = YES;
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self initializeForm];
+    }
+    return self;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self){
+        [self initializeForm];
+    }
+    return self;
+}
+
+-(void)initializeForm
+{
+    XLFormDescriptor *backgroundForm = [XLFormDescriptor formDescriptorWithTitle:@"Background Information"];
+
+//    backgroundForm.assignFirstResponderOnShow = YES;
     
     
     // Provider (with pre-populated, editable data)
@@ -53,6 +51,7 @@ static NSString * const kCustomRowText = @"kCustomText";
     providerRow.value = @"Canucks Autism Network";
     providerRow.required = YES;
     [providerSection addFormRow:providerRow];
+    
     
     // FIX THE FORMATTING OF ADDED PHONE NUMBER
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerPhone" rowType:XLFormRowDescriptorTypePhone];
@@ -114,14 +113,16 @@ static NSString * const kCustomRowText = @"kCustomText";
     [locationRow.cellConfigAtConfigure setObject:@"Postal Code" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
     
-    return [super initWithForm:backgroundForm];
+    self.form = backgroundForm;
     
 }
+
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
+    self.data = [[CANRIncident alloc]init];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
 }
 
 
@@ -162,3 +163,5 @@ static NSString * const kCustomRowText = @"kCustomText";
     }
 #endif
 }
+
+@end

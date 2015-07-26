@@ -1,5 +1,5 @@
 //
-//  CANRBackgroundInfoVC.h
+//  CSNRPersonsInvolvedVC.h
 //  CANReports
 //
 //  Created by Abegael Jackson on 2015-07-26.
@@ -7,12 +7,13 @@
 //
 
 #import "XLFormViewController.h"
-@class CANRIncident;
-
-@interface CANRBackgroundInfoVC : XLFormViewController
+@class CANRPersonInvolved;
 
 
-@property (strong, nonatomic) CANRIncident *data;
+@interface CSNRPersonsInvolvedVC : XLFormViewController
+
+
+@property (strong, nonatomic) CANRPersonInvolved *data;
 
 
 @end

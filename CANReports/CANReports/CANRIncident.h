@@ -49,7 +49,8 @@
 
 
 // Section 4: Incident Details
-@property (strong, nonatomic) NSDate *dateAndTimeOfIncident;
+@property (strong, nonatomic) NSString *dateOfIncident;
+@property (strong, nonatomic) NSString *timeOfIncident;
 @property (strong, nonatomic) NSString *incidentDescription;
 @property (assign, nonatomic) BOOL firstAidGiven;
 @property (strong, nonatomic) NSString *firstAidGivenBy;
@@ -75,6 +76,6 @@
 @property (strong, nonatomic) NSString *supervisorPosition;
 
 
-
+-(instancetype)init;
 
 @end

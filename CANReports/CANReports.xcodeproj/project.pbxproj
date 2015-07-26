@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F2369574C7F3DBFB27F03C0 /* libPods-CANReports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBEA6AB32589B78F91755C6 /* libPods-CANReports.a */; };
-		F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */; };
+		F628A67C1B655F09005F9ECF /* CSNRPersonsInvolvedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F628A67B1B655F09005F9ECF /* CSNRPersonsInvolvedVC.m */; };
+		F628A6821B656D1A005F9ECF /* CANRIncidentDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */; };
 		F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */; };
 		F6CDE64F1B642B5E00992F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE64E1B642B5E00992F09 /* main.m */; };
 		F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6511B642B5E00992F09 /* AppDelegate.m */; };
@@ -34,8 +35,10 @@
 		43A8622B5B24C89F56183E62 /* Pods-CANReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANReports.release.xcconfig"; path = "Pods/Target Support Files/Pods-CANReports/Pods-CANReports.release.xcconfig"; sourceTree = "<group>"; };
 		8160489C9BF00BE2D2DFAD58 /* Pods-CANReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANReports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CANReports/Pods-CANReports.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBEA6AB32589B78F91755C6 /* libPods-CANReports.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CANReports.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReviewTVC.h; sourceTree = "<group>"; };
-		F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReviewTVC.m; sourceTree = "<group>"; };
+		F628A67A1B655F09005F9ECF /* CSNRPersonsInvolvedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNRPersonsInvolvedVC.h; sourceTree = "<group>"; };
+		F628A67B1B655F09005F9ECF /* CSNRPersonsInvolvedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNRPersonsInvolvedVC.m; sourceTree = "<group>"; };
+		F628A6801B656D1A005F9ECF /* CANRIncidentDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRIncidentDetailsVC.h; sourceTree = "<group>"; };
+		F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRIncidentDetailsVC.m; sourceTree = "<group>"; };
 		F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoVC.h; sourceTree = "<group>"; };
 		F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoVC.m; sourceTree = "<group>"; };
 		F6CDE6491B642B5D00992F09 /* CANReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,10 +156,12 @@
 		F6CDE6931B643D6C00992F09 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */,
-				F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */,
 				F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */,
 				F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */,
+				F628A67A1B655F09005F9ECF /* CSNRPersonsInvolvedVC.h */,
+				F628A67B1B655F09005F9ECF /* CSNRPersonsInvolvedVC.m */,
+				F628A6801B656D1A005F9ECF /* CANRIncidentDetailsVC.h */,
+				F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,12 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F628A6821B656D1A005F9ECF /* CANRIncidentDetailsVC.m in Sources */,
+				F628A67C1B655F09005F9ECF /* CSNRPersonsInvolvedVC.m in Sources */,
 				F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */,
 				F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */,
 				F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */,
 				F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */,
 				F6CDE64F1B642B5E00992F09 /* main.m in Sources */,
-				F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

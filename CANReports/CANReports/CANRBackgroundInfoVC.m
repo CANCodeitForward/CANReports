@@ -47,27 +47,61 @@ static NSString * const kCustomRowText = @"kCustomText";
     providerSection = [XLFormSectionDescriptor formSectionWithTitle:@"*Do NOT talk to the media at any time"];
     [backgroundForm addFormSection:providerSection];
     
-    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Name"];
-    providerRow.value = @"Canucks Autism Network";
+    
+    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerName" rowType:XLFormRowDescriptorTypeText];
+    [providerRow.cellConfigAtConfigure setObject:@"Canucks Autism Network" forKey:@"textField.placeholder"];
+    providerRow.required = YES;
     [providerSection addFormRow:providerRow];
     
-    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Phone Number"];
-    providerRow.value = @"604-685-4049";
+    // FIX THE FORMATTING OF ADDED PHONE NUMBER
+    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerPhone" rowType:XLFormRowDescriptorTypePhone];
+    [providerRow.cellConfigAtConfigure setObject:@"604-685-4049" forKey:@"textField.placeholder"];
+    providerRow.required = YES;
     [providerSection addFormRow:providerRow];
     
-    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Address"];
-    providerRow.value = @"101-202 Yukon Street";
+    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerAddress" rowType:XLFormRowDescriptorTypeText];
+    [providerRow.cellConfigAtConfigure setObject:@"101-2020 Yukon Street" forKey:@"textField.placeholder"];
+    providerRow.required = YES;
     [providerSection addFormRow:providerRow];
     
-    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider City, Province"];
-    providerRow.value = @"Vancouver, BC";
+    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerCityProvince" rowType:XLFormRowDescriptorTypeText];
+    [providerRow.cellConfigAtConfigure setObject:@"Vancouver, BC" forKey:@"textField.placeholder"];
+    providerRow.required = YES;
     [providerSection addFormRow:providerRow];
     
-    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Postal Code"];
-    providerRow.value = @"V5Y 3N8";
+    providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerPostalCode" rowType:XLFormRowDescriptorTypeText];
+    [providerRow.cellConfigAtConfigure setObject:@"V5Y 3N8" forKey:@"textField.placeholder"];
+    providerRow.required = YES;
     [providerSection addFormRow:providerRow];
-    
 
+    
+    
+    // Incident Location
+    XLFormSectionDescriptor *locationSection;
+    XLFormRowDescriptor *locationRow;
+    
+    locationSection = [XLFormSectionDescriptor formSectionWithTitle:@"*Do NOT talk to the media at any time"];
+    [backgroundForm addFormSection:locationSection];
+    
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Incident Location"];
+    locationRow.value = @"Canucks Autism Network";
+    [locationSection addFormRow:locationRow];
+    
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Phone Number"];
+    locationRow.value = @"604-685-4049";
+    [locationSection addFormRow:locationRow];
+    
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Address"];
+    locationRow.value = @"101-202 Yukon Street";
+    [locationSection addFormRow:locationRow];
+    
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider City, Province"];
+    locationRow.value = @"Vancouver, BC";
+    [locationSection addFormRow:locationRow];
+    
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomRowFloatLabeledTextFieldTag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Provider Postal Code"];
+    locationRow.value = @"V5Y 3N8";
+    [locationSection addFormRow:locationRow];
 
     
     return [super initWithForm:formDescriptor];

@@ -96,7 +96,7 @@
     XLFormSectionDescriptor *witessSection;
     XLFormRowDescriptor *witnessRow;
     
-    witessSection = [XLFormSectionDescriptor formSectionWithTitle:@"Reporter"];
+    witessSection = [XLFormSectionDescriptor formSectionWithTitle:@"Witness"];
     [notificationForm addFormSection:witessSection];
     
     witnessRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"witnessName" rowType:XLFormRowDescriptorTypeText];

@@ -96,20 +96,20 @@
     [locationRow.cellConfigAtConfigure setObject:@"Phone" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
     
-    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentProgram" rowType:XLFormRowDescriptorTypePhone];
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentProgram" rowType:XLFormRowDescriptorTypeText];
     [locationRow.cellConfigAtConfigure setObject:@"Program" forKey:@"textField.placeholder"];
     locationRow.required = YES;
     [locationSection addFormRow:locationRow];
     
-    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentAddress" rowType:XLFormRowDescriptorTypePhone];
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentAddress" rowType:XLFormRowDescriptorTypeText];
     [locationRow.cellConfigAtConfigure setObject:@"Address" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
     
-    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentCityProvince" rowType:XLFormRowDescriptorTypePhone];
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentCityProvince" rowType:XLFormRowDescriptorTypeText];
     [locationRow.cellConfigAtConfigure setObject:@"City, Province" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
     
-    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentPostalCode" rowType:XLFormRowDescriptorTypePhone];
+    locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentPostalCode" rowType:XLFormRowDescriptorTypeText];
     [locationRow.cellConfigAtConfigure setObject:@"Postal Code" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
     
@@ -123,6 +123,7 @@
     [super viewDidLoad];
     self.data = [[CANRIncident alloc]init];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
+    
 }
 
 

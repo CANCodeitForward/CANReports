@@ -76,7 +76,7 @@
     typeOfIncidentSection = [XLFormSectionDescriptor formSectionWithTitle:@"Type of Incident"];
     [detailsOfIncidentForm addFormSection:typeOfIncidentSection];
     
-    typeOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"typeOfIncident" rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Multiple Selector"];
+    typeOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"typeOfIncident" rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Type of Incident"];
     typeOfIncidentRow.selectorOptions = @[@"Physical Abuse", @"Sexual Abuse", @"Emotional Abuse", @"Neglect", @"Financial Abuse", @"Unexpected Illness", @"Disease Outbreak", @"Death", @"Fall", @"Motor Vehicle Injury", @"Other Injury", @"Poisoning", @"Agressive/Unusual Behaviour", @"Missing Person", @"Medication Error"];
     typeOfIncidentRow.valueTransformer = [NSArrayValueTrasformer class];
     [typeOfIncidentSection addFormRow:typeOfIncidentRow];

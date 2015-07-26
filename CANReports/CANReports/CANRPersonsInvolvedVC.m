@@ -63,7 +63,7 @@
     personRow.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Male"],
                             [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Female"],
                             ];
-    personRow.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"];
+    personRow.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@""];
     [personsSection addFormRow:personRow];
     
     

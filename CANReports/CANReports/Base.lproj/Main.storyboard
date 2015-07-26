@@ -31,6 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Background Information" id="1sQ-9U-Dzs">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="fuN-gN-KlI">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="YeR-77-nv1" kind="show" id="VEv-gw-TSj"/>
                             </connections>
@@ -52,6 +53,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5l-db-dn4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196078431372548" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -89,6 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Person(s) Involved" id="0yY-qr-qX2">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="gIX-Xr-QAd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="P5F-ft-qYX" kind="show" id="SSd-9s-0Lf"/>
                             </connections>
@@ -129,6 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Incident Details" id="rol-oA-Bsx">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="U3K-90-NbM">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="zbq-fF-gwe" kind="show" id="Nbr-hM-Lp2"/>
                             </connections>
@@ -168,7 +175,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notification" id="shf-Xc-9SW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NQE-By-sAV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NQE-By-sAV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jno-AA-Zz6" id="JnH-kF-6JB"/>

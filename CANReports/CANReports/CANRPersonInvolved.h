@@ -10,4 +10,11 @@
 
 @interface CANRPersonInvolved : NSObject
 
+
+// Section 2: Person(s) Involved
+@property (strong, nonatomic) NSString *personInvolved;
+@property (strong, nonatomic) NSDate *personBirthdate;
+@property (assign, nonatomic) BOOL isMale;
+
+
 @end

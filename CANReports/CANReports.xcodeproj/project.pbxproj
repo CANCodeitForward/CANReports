@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */; };
 		F6CDE64F1B642B5E00992F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE64E1B642B5E00992F09 /* main.m */; };
 		F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6511B642B5E00992F09 /* AppDelegate.m */; };
 		F6CDE6581B642B5E00992F09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE6561B642B5E00992F09 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReviewTVC.h; sourceTree = "<group>"; };
+		F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReviewTVC.m; sourceTree = "<group>"; };
 		F6CDE6491B642B5D00992F09 /* CANReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CDE64D1B642B5E00992F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CDE64E1B642B5E00992F09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 			children = (
 				F6CDE69E1B64493800992F09 /* CANRBackgroundInfoTVC.h */,
 				F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */,
+				F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */,
+				F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */,
 				F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */,
 				F6CDE64F1B642B5E00992F09 /* main.m in Sources */,
+				F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +476,7 @@
 				F6CDE66E1B642B5E00992F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6CDE66F1B642B5E00992F09 /* Build configuration list for PBXNativeTarget "CANReportsTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +485,7 @@
 				F6CDE6711B642B5E00992F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

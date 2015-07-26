@@ -1,5 +1,5 @@
 //
-//  CSNRPersonsInvolvedVC.h
+//  CANRPersonsInvolvedVC.h
 //  CANReports
 //
 //  Created by Abegael Jackson on 2015-07-26.
@@ -10,7 +10,7 @@
 @class CANRPersonInvolved;
 
 
-@interface CSNRPersonsInvolvedVC : XLFormViewController
+@interface CANRPersonsInvolvedVC : XLFormViewController
 
 
 @property (strong, nonatomic) CANRPersonInvolved *data;

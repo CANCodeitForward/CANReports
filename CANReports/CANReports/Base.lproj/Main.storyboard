@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="SNP-Yz-9WO">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
         <!--Person(s) Involved-->
         <scene sceneID="5a8-IY-1mt">
             <objects>
-                <viewController title="Person(s) Involved" automaticallyAdjustsScrollViewInsets="NO" id="YeR-77-nv1" customClass="CSNRPersonsInvolvedVC" sceneMemberID="viewController">
+                <viewController title="Person(s) Involved" automaticallyAdjustsScrollViewInsets="NO" id="YeR-77-nv1" customClass="CANRPersonsInvolvedVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0bQ-nK-4hg"/>
                         <viewControllerLayoutGuide type="bottom" id="J0v-e7-gnL"/>
@@ -76,7 +76,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="tWl-aY-ZPb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +116,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="YQP-9K-g8N">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,7 +128,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Incident Details" id="rol-oA-Bsx">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="U3K-90-NbM"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="U3K-90-NbM">
+                            <connections>
+                                <segue destination="zbq-fF-gwe" kind="show" id="Nbr-hM-Lp2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YQP-9K-g8N" id="ZQw-n2-239"/>
@@ -137,6 +141,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yt4-Ee-bKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3668" y="56"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="j6v-xk-F47">
+            <objects>
+                <viewController title="Notification" automaticallyAdjustsScrollViewInsets="NO" id="zbq-fF-gwe" customClass="CANRNotificationVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OID-nf-6Gf"/>
+                        <viewControllerLayoutGuide type="bottom" id="55d-3m-PLU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OnT-Ix-cG5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jno-AA-Zz6">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jno-AA-Zz6" firstAttribute="leading" secondItem="OnT-Ix-cG5" secondAttribute="leading" id="1D2-RT-k8y"/>
+                            <constraint firstItem="55d-3m-PLU" firstAttribute="top" secondItem="jno-AA-Zz6" secondAttribute="bottom" id="qzC-Vi-yK1"/>
+                            <constraint firstAttribute="trailing" secondItem="jno-AA-Zz6" secondAttribute="trailing" id="skK-Xo-YF7"/>
+                            <constraint firstItem="jno-AA-Zz6" firstAttribute="top" secondItem="OID-nf-6Gf" secondAttribute="bottom" id="zwS-NB-y4s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notification" id="shf-Xc-9SW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NQE-By-sAV"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="jno-AA-Zz6" id="JnH-kF-6JB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNP-BF-ra3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4427" y="56"/>
         </scene>
     </scenes>
 </document>

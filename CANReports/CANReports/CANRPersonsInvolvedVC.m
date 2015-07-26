@@ -1,20 +1,20 @@
 //
-//  CSNRPersonsInvolvedVC.m
+//  CANRPersonsInvolvedVC.m
 //  CANReports
 //
 //  Created by Abegael Jackson on 2015-07-26.
 //  Copyright (c) 2015 Canucks Autism Network. All rights reserved.
 //
 
-#import "CSNRPersonsInvolvedVC.h"
+#import "CANRPersonsInvolvedVC.h"
 #import "XLForm.h"
 #import "CANRPersonInvolved.h"
 
-@interface CSNRPersonsInvolvedVC ()
+@interface CANRPersonsInvolvedVC ()
 
 @end
 
-@implementation CSNRPersonsInvolvedVC
+@implementation CANRPersonsInvolvedVC
 
 -(instancetype)initWithCoder:(NSCoder *)coder
 {

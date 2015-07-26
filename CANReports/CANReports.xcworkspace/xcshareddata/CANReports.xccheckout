@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>42B8A7A3-09D9-479A-8151-3DFF459ACD44</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CANReports</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8FD562F4336DD4528A3F3D9607E3721729A4E4BB</key>
+		<string>https://github.com/CANCodeitForward/CANReports.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CANReports/CANReports.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8FD562F4336DD4528A3F3D9607E3721729A4E4BB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CANCodeitForward/CANReports.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8FD562F4336DD4528A3F3D9607E3721729A4E4BB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8FD562F4336DD4528A3F3D9607E3721729A4E4BB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CanucksAutismNetwork</string>
+		</dict>
+	</array>
+</dict>
+</plist>

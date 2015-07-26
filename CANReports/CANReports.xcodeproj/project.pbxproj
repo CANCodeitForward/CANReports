@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2369574C7F3DBFB27F03C0 /* libPods-CANReports.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBEA6AB32589B78F91755C6 /* libPods-CANReports.a */; };
 		F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */; };
+		F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */; };
+		F6CB6AFD1B64E1F50021FA40 /* FloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AFC1B64E1F50021FA40 /* FloatLabeledTextFieldCell.m */; };
 		F6CDE64F1B642B5E00992F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE64E1B642B5E00992F09 /* main.m */; };
 		F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6511B642B5E00992F09 /* AppDelegate.m */; };
 		F6CDE6581B642B5E00992F09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE6561B642B5E00992F09 /* Main.storyboard */; };
@@ -16,7 +19,6 @@
 		F6CDE6691B642B5E00992F09 /* CANReportsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6681B642B5E00992F09 /* CANReportsTests.m */; };
 		F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6991B643F9400992F09 /* CANRIncident.m */; };
 		F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */; };
-		F6CDE6A01B64493800992F09 /* CANRBackgroundInfoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +32,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43A8622B5B24C89F56183E62 /* Pods-CANReports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANReports.release.xcconfig"; path = "Pods/Target Support Files/Pods-CANReports/Pods-CANReports.release.xcconfig"; sourceTree = "<group>"; };
+		8160489C9BF00BE2D2DFAD58 /* Pods-CANReports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CANReports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CANReports/Pods-CANReports.debug.xcconfig"; sourceTree = "<group>"; };
+		DBBEA6AB32589B78F91755C6 /* libPods-CANReports.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CANReports.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReviewTVC.h; sourceTree = "<group>"; };
 		F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReviewTVC.m; sourceTree = "<group>"; };
+		F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoVC.h; sourceTree = "<group>"; };
+		F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoVC.m; sourceTree = "<group>"; };
+		F6CB6AFB1B64E1F50021FA40 /* FloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
+		F6CB6AFC1B64E1F50021FA40 /* FloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		F6CDE6491B642B5D00992F09 /* CANReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CDE64D1B642B5E00992F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CDE64E1B642B5E00992F09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,8 +56,6 @@
 		F6CDE6991B643F9400992F09 /* CANRIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRIncident.m; sourceTree = "<group>"; };
 		F6CDE69B1B643FA200992F09 /* CANRPersonInvolved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRPersonInvolved.h; sourceTree = "<group>"; };
 		F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRPersonInvolved.m; sourceTree = "<group>"; };
-		F6CDE69E1B64493800992F09 /* CANRBackgroundInfoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoTVC.h; sourceTree = "<group>"; };
-		F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2369574C7F3DBFB27F03C0 /* libPods-CANReports.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CD3E4B4B3BB266C8FD0DD09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBBEA6AB32589B78F91755C6 /* libPods-CANReports.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0EBFCBEA0CF8BF9988E98CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8160489C9BF00BE2D2DFAD58 /* Pods-CANReports.debug.xcconfig */,
+				43A8622B5B24C89F56183E62 /* Pods-CANReports.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F6CDE6401B642B5D00992F09 = {
 			isa = PBXGroup;
 			children = (
 				F6CDE64B1B642B5E00992F09 /* CANReports */,
 				F6CDE6651B642B5E00992F09 /* CANReportsTests */,
 				F6CDE64A1B642B5D00992F09 /* Products */,
+				D0EBFCBEA0CF8BF9988E98CB /* Pods */,
+				4CD3E4B4B3BB266C8FD0DD09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,10 +156,10 @@
 		F6CDE6931B643D6C00992F09 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6CDE69E1B64493800992F09 /* CANRBackgroundInfoTVC.h */,
-				F6CDE69F1B64493800992F09 /* CANRBackgroundInfoTVC.m */,
 				F6CB6AF51B645E230021FA40 /* CANRReviewTVC.h */,
 				F6CB6AF61B645E230021FA40 /* CANRReviewTVC.m */,
+				F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */,
+				F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +197,8 @@
 		F6CDE6A11B64494C00992F09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB6AFB1B64E1F50021FA40 /* FloatLabeledTextFieldCell.h */,
+				F6CB6AFC1B64E1F50021FA40 /* FloatLabeledTextFieldCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6CDE66C1B642B5E00992F09 /* Build configuration list for PBXNativeTarget "CANReports" */;
 			buildPhases = (
+				47D2F7249A2D6FD61B7072A1 /* Check Pods Manifest.lock */,
 				F6CDE6451B642B5D00992F09 /* Sources */,
 				F6CDE6461B642B5D00992F09 /* Frameworks */,
 				F6CDE6471B642B5D00992F09 /* Resources */,
+				C13E4516FB36D7B5A4DA515D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,14 +300,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47D2F7249A2D6FD61B7072A1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C13E4516FB36D7B5A4DA515D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANReports/Pods-CANReports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6CDE6451B642B5D00992F09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */,
 				F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */,
-				F6CDE6A01B64493800992F09 /* CANRBackgroundInfoTVC.m in Sources */,
 				F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */,
+				F6CB6AFD1B64E1F50021FA40 /* FloatLabeledTextFieldCell.m in Sources */,
 				F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */,
 				F6CDE64F1B642B5E00992F09 /* main.m in Sources */,
 				F6CB6AF71B645E230021FA40 /* CANRReviewTVC.m in Sources */,
@@ -403,6 +468,7 @@
 		};
 		F6CDE66D1B642B5E00992F09 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8160489C9BF00BE2D2DFAD58 /* Pods-CANReports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CANReports/Info.plist;
@@ -414,6 +480,7 @@
 		};
 		F6CDE66E1B642B5E00992F09 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43A8622B5B24C89F56183E62 /* Pods-CANReports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CANReports/Info.plist;

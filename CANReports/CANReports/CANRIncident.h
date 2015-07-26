@@ -23,7 +23,7 @@
 @property (strong, nonatomic) NSString *incidentProgram;
 @property (strong, nonatomic) NSString *incidentAddress;
 @property (strong, nonatomic) NSString *incidentCityProvince;
-@property (strong, nonatomic) NSString *incidentPostal;
+@property (strong, nonatomic) NSString *incidentPostalCode;
 
 
 // Section 2: Person(s) Involved, please see CANRPersonInvolved class

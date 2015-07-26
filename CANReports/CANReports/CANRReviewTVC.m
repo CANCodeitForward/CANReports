@@ -49,7 +49,7 @@
                                              @"incidentProgram": data.incidentProgram,
                                              @"incidentAddress": data.incidentAddress
                                              @"incidentCityProvince": data.incidentCityProvince,
-                                             @"incidentPostal": data.incidentPostal
+                                             @"incidentPostalCode": data.incidentPostalCode
                                              }
                                      // must be dynamic based on number of people, TO DO!!!
                                      @"persons": @{

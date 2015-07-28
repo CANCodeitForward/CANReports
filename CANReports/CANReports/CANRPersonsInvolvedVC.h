@@ -14,6 +14,7 @@
 
 
 @property (strong, nonatomic) CANRPersonInvolved *data;
+@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 
 
 @end

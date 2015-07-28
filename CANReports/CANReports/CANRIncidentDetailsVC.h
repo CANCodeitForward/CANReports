@@ -13,6 +13,7 @@
 
 
 @property (strong, nonatomic) CANRIncident *data;
+@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 
 
 @end

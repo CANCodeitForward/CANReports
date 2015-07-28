@@ -57,7 +57,7 @@
     notificationSection.hidden = [NSString stringWithFormat:@"$%@==0", @"familyNotified"];
     [notificationForm addFormSection:notificationSection];
     
-    notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"dateAndTimeOfNotification" rowType:XLFormRowDescriptorTypeDateTimeInline title:@"When?"];
+    notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyNotifiedAtDateTime" rowType:XLFormRowDescriptorTypeDateTimeInline title:@"When?"];
     notificationRow.value = [NSDate new];
     [notificationSection addFormRow:notificationRow];
     
@@ -139,42 +139,32 @@
 }
 
 
--(void)savePressed:(UIBarButtonItem * __unused)button
-{
-    NSArray * validationErrors = [self formValidationErrors];
-    if (validationErrors.count > 0){
-        [self showFormValidationError:[validationErrors firstObject]];
-        return;
-    }
-    [self.tableView endEditing:YES];
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 80000
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                      message:@"No errors found"
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                            otherButtonTitles:nil];
-    [message show];
-#else
-    if ([UIAlertController class]){
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                                                  message:@"No errors found"
-                                                                           preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([[segue identifier] isEqualToString:@"showReportReview"]) {
+        NSDictionary *notificationDictionary = [self makeNotificationDictionary];
+        NSDictionary *administrationDictionary = [self makeAdministrationDictionary];
         
+        [self.dataDictionary setObject:notificationDictionary forKey:@"notification"];
+        [self.dataDictionary setObject:administrationDictionary forKey:@"administration"];
+    
+        [[segue destinationViewController] setDataDictionary:self.dataDictionary];
+    
     }
-    else{
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                          message:@"No errors found"
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-#endif
 }
+
+
+-(NSMutableDictionary*)makeNotificationDictionary{
+    NSMutableDictionary *notification = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [notification removeObjectsForKeys:@[@"reporterName", @"reporterPosition", @"supervisorName", @"supervisorPosition", @"witnessName", @"witnessPosition"]];
+    return notification;
+}
+
+-(NSMutableDictionary*)makeAdministrationDictionary{
+    NSMutableDictionary *administration = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [administration removeObjectsForKeys:@[@"familyMemberNotified", @"familyMemberPhone", @"familyMemberRelationship", @"familyNotified", @"familyNotifiedAtDateTime"]];
+    return administration;
+}
+
 
 @end

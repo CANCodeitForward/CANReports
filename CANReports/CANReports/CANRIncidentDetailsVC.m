@@ -90,11 +90,11 @@
     detailsOfIncidentSection = [XLFormSectionDescriptor formSectionWithTitle:@"Details"];
     [detailsOfIncidentForm addFormSection:detailsOfIncidentSection];
     
-    detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"dateOfIncident" rowType:XLFormRowDescriptorTypeDateInline title:@"Date"];
+    detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentDate" rowType:XLFormRowDescriptorTypeDateInline title:@"Date"];
     detailsOfIncidentRow.value = [NSDate new];
     [detailsOfIncidentSection addFormRow:detailsOfIncidentRow];
     
-    detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"timeOfIncident" rowType:XLFormRowDescriptorTypeTimeInline title:@"Time"];
+    detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentTime" rowType:XLFormRowDescriptorTypeTimeInline title:@"Time"];
     detailsOfIncidentRow.value = [NSDate new];
     [detailsOfIncidentSection addFormRow:detailsOfIncidentRow];
     
@@ -123,7 +123,7 @@
     [actionTakenSection addFormRow:actionTakenRow];
 
     
-    actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"visitedClinic" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Clinic"];
+    actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"clinicVisited" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Clinic"];
     actionTakenRow.value = @0;
     [actionTakenSection addFormRow:actionTakenRow];
     
@@ -133,7 +133,7 @@
     [actionTakenSection addFormRow:actionTakenRow];
     
     
-    actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"visitedHospital" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Hospital"];
+    actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"hospitalVisited" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Hospital"];
     actionTakenRow.value = @0;
     [actionTakenSection addFormRow:actionTakenRow];
     
@@ -156,42 +156,39 @@
 }
 
 
--(void)savePressed:(UIBarButtonItem * __unused)button
-{
-    NSArray * validationErrors = [self formValidationErrors];
-    if (validationErrors.count > 0){
-        [self showFormValidationError:[validationErrors firstObject]];
-        return;
-    }
-    [self.tableView endEditing:YES];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 80000
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                      message:@"No errors found"
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                            otherButtonTitles:nil];
-    [message show];
-#else
-    if ([UIAlertController class]){
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                                                  message:@"No errors found"
-                                                                           preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
+    if ([[segue identifier] isEqualToString:@"showNotification"]) {
+        NSDictionary *typeOfIncidentDictionary = [self makeTypeOfIncidentDictionary];
+        NSDictionary *incidentDetailsDictionary = [self makeIncidentDetailsDictionary];
+        NSDictionary *actionTakenDictionary = [self makeActionTakenDictionary];
+        
+        [self.dataDictionary setObject:typeOfIncidentDictionary forKey:@"typeOfIncident"];
+        [self.dataDictionary setObject:incidentDetailsDictionary forKey:@"incidentDetails"];
+        [self.dataDictionary setObject:actionTakenDictionary forKey:@"actionTaken"];
+        
+        [[segue destinationViewController] setDataDictionary:self.dataDictionary];
         
     }
-    else{
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                          message:@"No errors found"
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-#endif
+}
+
+
+-(NSMutableDictionary*)makeTypeOfIncidentDictionary{
+    NSMutableDictionary *typeOfIncident = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [typeOfIncident removeObjectsForKeys:@[@"clinicDoctorName", @"clinicVisited", @"firstAidGiven", @"firstAidGivenBy", @"hospitalDoctorName", @"hospitalVisited", @"incidentDate", @"incidentDescription", @"incidentTime"]];
+    return typeOfIncident;
+}
+
+-(NSMutableDictionary*)makeIncidentDetailsDictionary{
+    NSMutableDictionary *incidentDetails = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [incidentDetails removeObjectsForKeys:@[@"typeOfIncident", @"clinicDoctorName", @"clinicVisited", @"firstAidGiven", @"firstAidGivenBy", @"hospitalDoctorName", @"hospitalVisited"]];
+    return incidentDetails;
+}
+
+-(NSMutableDictionary*)makeActionTakenDictionary{
+    NSMutableDictionary *actionTaken = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [actionTaken removeObjectsForKeys:@[@"typeOfIncident", @"incidentDate" @"incidentDescription", @"incidentTime"]];
+    return actionTaken;
 }
 
 @end

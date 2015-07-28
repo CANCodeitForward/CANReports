@@ -81,42 +81,26 @@
 }
 
 
--(void)savePressed:(UIBarButtonItem * __unused)button
-{
-    NSArray * validationErrors = [self formValidationErrors];
-    if (validationErrors.count > 0){
-        [self showFormValidationError:[validationErrors firstObject]];
-        return;
-    }
-    [self.tableView endEditing:YES];
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 80000
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                      message:@"No errors found"
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                            otherButtonTitles:nil];
-    [message show];
-#else
-    if ([UIAlertController class]){
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                                                  message:@"No errors found"
-                                                                           preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
+    if ([[segue identifier] isEqualToString:@"showIncidentDetails"]) {
+        NSDictionary *personsDictionary = [self makePersonsDictionary];
+
+        [self.dataDictionary setObject:personsDictionary forKey:@"persons"];
+        
+        [[segue destinationViewController] setDataDictionary:self.dataDictionary];
         
     }
-    else{
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                          message:@"No errors found"
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-#endif
 }
+
+
+-(NSMutableDictionary*)makePersonsDictionary{
+    NSMutableDictionary *persons = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    return persons;
+}
+
+
+
 
 @end

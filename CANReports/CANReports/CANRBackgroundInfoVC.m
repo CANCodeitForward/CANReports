@@ -122,47 +122,35 @@
 {
     [super viewDidLoad];
     self.data = [[CANRIncident alloc]init];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
+    self.dataDictionary = [NSMutableDictionary dictionary];
     
 }
 
-
--(void)savePressed:(UIBarButtonItem * __unused)button
-{
-    NSArray * validationErrors = [self formValidationErrors];
-    if (validationErrors.count > 0){
-        [self showFormValidationError:[validationErrors firstObject]];
-        return;
-    }
-    [self.tableView endEditing:YES];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < 80000
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                      message:@"No errors found"
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                            otherButtonTitles:nil];
-    [message show];
-#else
-    if ([UIAlertController class]){
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                                                  message:@"No errors found"
-                                                                           preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:nil]];
-        [self presentViewController:alertController animated:YES completion:nil];
+    if ([[segue identifier] isEqualToString:@"showPersonsInvolved"]) {
+        NSDictionary *providerDictionary = [self makeProviderDictionary];
+        NSDictionary *incidentDictionary = [self makeIncidentDictionary];
         
+        [self.dataDictionary setObject:providerDictionary forKey:@"provider"];
+        [self.dataDictionary setObject:incidentDictionary forKey:@"incident"];
+        
+        [[segue destinationViewController] setDataDictionary:self.dataDictionary];
+
     }
-    else{
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil)
-                                                          message:@"No errors found"
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-        [message show];
-    }
-#endif
+}
+
+-(NSMutableDictionary*)makeIncidentDictionary{
+    NSMutableDictionary *incident = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [incident removeObjectsForKeys:@[@"providerAddress", @"providerCityProvince", @"providerName", @"providerPhone", @"providerPostalCode"]];
+    return incident;
+}
+
+
+-(NSMutableDictionary*)makeProviderDictionary{
+    NSMutableDictionary *provider = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    [provider removeObjectsForKeys:@[@"incidentAddress", @"incidentCityProvince", @"incidentLocation", @"incidentPhone", @"incidentPostalCode", @"incidentProgram"]];
+    return provider;
 }
 
 @end

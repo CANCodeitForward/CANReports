@@ -8,7 +8,6 @@
 
 #import "CANRNotificationVC.h"
 #import "XLForm.h"
-#import "CANRIncident.h"
 
 @interface CANRNotificationVC ()
 
@@ -134,7 +133,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [[CANRIncident alloc]init];
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
 }
 

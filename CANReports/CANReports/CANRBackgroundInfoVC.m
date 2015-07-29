@@ -8,7 +8,6 @@
 
 #import "CANRBackgroundInfoVC.h"
 #import "XLForm.h"
-#import "CANRIncident.h"
 
 
 @implementation CANRBackgroundInfoVC
@@ -121,7 +120,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [[CANRIncident alloc]init];
     self.dataDictionary = [NSMutableDictionary dictionary];
     
 }

@@ -8,7 +8,6 @@
 
 #import "CANRPersonsInvolvedVC.h"
 #import "XLForm.h"
-#import "CANRPersonInvolved.h"
 
 @interface CANRPersonsInvolvedVC ()
 
@@ -58,7 +57,7 @@
     personRow.value = [NSDate new];
     [personsSection addFormRow:personRow];
     
-    
+    // coming up in dictionary as pointer address. FIX THIS
     personRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"personGender" rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Gender"];
     personRow.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Male"],
                             [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Female"],
@@ -76,7 +75,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [[CANRPersonInvolved alloc]init];
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
 }
 

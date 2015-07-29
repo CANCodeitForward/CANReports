@@ -1,0 +1,52 @@
+{
+    // actionTaken
+    clinicDoctorName : "Clinic doctor's name";
+    clinicVisited : "Did you visit a clinic?";
+    firstAidGiven : "Was first aid given?";
+    hospitalDoctorName : "Hospital doctor's name";
+    hospitalVisited : "Did you visit a hospital?";
+    
+    // administration
+    reporterName : "Reported by";
+    reporterPosition : "Position";
+    supervisorName : "Overseeing Supervisor";
+    supervisorPosition : "Position";
+    witnessName : "Witnessed by";
+    witnessPosition : "Position";
+    
+    // incident
+    incidentAddress : "";
+    incidentCityProvince : "";
+    incidentLocation : "Incident location";
+    incidentPhone : "Phone";
+    incidentPostalCode : "";
+    incidentProgram : "Program";
+    
+    // incidentDetails
+    incidentDate : "Date of incident";
+    incidentDescription : "Description of incident";
+    incidentTime : "Time of incident";
+    
+    // notification
+    familyMemberNotified : "Who was notified?";
+    familyMemberPhone : "Phone";
+    familyMemberRelationship : "Relationship";
+    familyNotified : "Was family notified?";
+    familyNotifiedAtDateTime : "Date and time of notification";
+    
+    // persons
+    personBirthdate : "Birthdate";
+    personGender : "Gender";
+    personInvolved : "Name of person involved";
+    
+    // provider
+    providerAddress : "Address";
+    providerCityProvince : "";
+    providerName : "";
+    providerPhone : "";
+    providerPostalCode : "";
+    
+    // typeOfIncident
+    typeOfIncident : "Type of incident";
+    
+}

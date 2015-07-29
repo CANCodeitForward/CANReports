@@ -8,7 +8,6 @@
 
 #import "CANRIncidentDetailsVC.h"
 #import "XLForm.h"
-#import "CANRIncident.h"
 
 #pragma mark - NSValueTransformer
 
@@ -151,7 +150,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.data = [[CANRIncident alloc]init];
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
 }
 
@@ -184,10 +182,10 @@
     [incidentDetails removeObjectsForKeys:@[@"typeOfIncident", @"clinicDoctorName", @"clinicVisited", @"firstAidGiven", @"firstAidGivenBy", @"hospitalDoctorName", @"hospitalVisited"]];
     return incidentDetails;
 }
-
+// fix date and time 
 -(NSMutableDictionary*)makeActionTakenDictionary{
     NSMutableDictionary *actionTaken = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
-    [actionTaken removeObjectsForKeys:@[@"typeOfIncident", @"incidentDate" @"incidentDescription", @"incidentTime"]];
+    [actionTaken removeObjectsForKeys:@[@"typeOfIncident", @"incidentDate", @"incidentDescription", @"incidentTime"]];
     return actionTaken;
 }
 

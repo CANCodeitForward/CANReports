@@ -49,6 +49,7 @@
 		F658E66B1B683CE400537B75 /* CANRReportDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReportDataCell.m; sourceTree = "<group>"; };
 		F658E66D1B683CFE00537B75 /* CANRReportData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReportData.h; sourceTree = "<group>"; };
 		F658E66E1B683CFE00537B75 /* CANRReportData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReportData.m; sourceTree = "<group>"; };
+		F658E6741B68577100537B75 /* CANRReportKeys.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CANRReportKeys.json; sourceTree = "<group>"; };
 		F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoVC.h; sourceTree = "<group>"; };
 		F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoVC.m; sourceTree = "<group>"; };
 		F6CDE6491B642B5D00992F09 /* CANReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CDE6591B642B5E00992F09 /* Images.xcassets */,
+				F658E6741B68577100537B75 /* CANRReportKeys.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

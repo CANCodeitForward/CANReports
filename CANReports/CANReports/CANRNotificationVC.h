@@ -7,11 +7,13 @@
 //
 
 #import "XLFormViewController.h"
-@class CANRIncident;
+
+
 
 @interface CANRNotificationVC : XLFormViewController
 
-@property (strong, nonatomic) CANRIncident *data;
+
 @property (strong, nonatomic) NSMutableDictionary *dataDictionary;
+
 
 @end

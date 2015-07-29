@@ -7,13 +7,11 @@
 //
 
 #import "XLFormViewController.h"
-@class CANRPersonInvolved;
 
 
 @interface CANRPersonsInvolvedVC : XLFormViewController
 
 
-@property (strong, nonatomic) CANRPersonInvolved *data;
 @property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 
 

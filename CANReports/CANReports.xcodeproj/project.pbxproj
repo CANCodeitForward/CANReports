@@ -11,6 +11,9 @@
 		F628A67C1B655F09005F9ECF /* CANRPersonsInvolvedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F628A67B1B655F09005F9ECF /* CANRPersonsInvolvedVC.m */; };
 		F628A6821B656D1A005F9ECF /* CANRIncidentDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */; };
 		F628A6851B6580D4005F9ECF /* CANRNotificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F628A6841B6580D4005F9ECF /* CANRNotificationVC.m */; };
+		F658E6661B683BDB00537B75 /* CANRReportReviewTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F658E6651B683BDB00537B75 /* CANRReportReviewTVC.m */; };
+		F658E66C1B683CE400537B75 /* CANRReportDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F658E66B1B683CE400537B75 /* CANRReportDataCell.m */; };
+		F658E66F1B683CFE00537B75 /* CANRReportData.m in Sources */ = {isa = PBXBuildFile; fileRef = F658E66E1B683CFE00537B75 /* CANRReportData.m */; };
 		F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */; };
 		F6CDE64F1B642B5E00992F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE64E1B642B5E00992F09 /* main.m */; };
 		F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6511B642B5E00992F09 /* AppDelegate.m */; };
@@ -18,8 +21,6 @@
 		F6CDE65A1B642B5E00992F09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE6591B642B5E00992F09 /* Images.xcassets */; };
 		F6CDE65D1B642B5E00992F09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6CDE65B1B642B5E00992F09 /* LaunchScreen.xib */; };
 		F6CDE6691B642B5E00992F09 /* CANReportsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6681B642B5E00992F09 /* CANReportsTests.m */; };
-		F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE6991B643F9400992F09 /* CANRIncident.m */; };
-		F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,12 @@
 		F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRIncidentDetailsVC.m; sourceTree = "<group>"; };
 		F628A6831B6580D4005F9ECF /* CANRNotificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRNotificationVC.h; sourceTree = "<group>"; };
 		F628A6841B6580D4005F9ECF /* CANRNotificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRNotificationVC.m; sourceTree = "<group>"; };
+		F658E6641B683BDB00537B75 /* CANRReportReviewTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReportReviewTVC.h; sourceTree = "<group>"; };
+		F658E6651B683BDB00537B75 /* CANRReportReviewTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReportReviewTVC.m; sourceTree = "<group>"; };
+		F658E66A1B683CE400537B75 /* CANRReportDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReportDataCell.h; sourceTree = "<group>"; };
+		F658E66B1B683CE400537B75 /* CANRReportDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReportDataCell.m; sourceTree = "<group>"; };
+		F658E66D1B683CFE00537B75 /* CANRReportData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRReportData.h; sourceTree = "<group>"; };
+		F658E66E1B683CFE00537B75 /* CANRReportData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRReportData.m; sourceTree = "<group>"; };
 		F6CB6AF81B64DA590021FA40 /* CANRBackgroundInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRBackgroundInfoVC.h; sourceTree = "<group>"; };
 		F6CB6AF91B64DA590021FA40 /* CANRBackgroundInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRBackgroundInfoVC.m; sourceTree = "<group>"; };
 		F6CDE6491B642B5D00992F09 /* CANReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CANReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,10 +62,6 @@
 		F6CDE6621B642B5E00992F09 /* CANReportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CANReportsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CDE6671B642B5E00992F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CDE6681B642B5E00992F09 /* CANReportsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CANReportsTests.m; sourceTree = "<group>"; };
-		F6CDE6981B643F9400992F09 /* CANRIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRIncident.h; sourceTree = "<group>"; };
-		F6CDE6991B643F9400992F09 /* CANRIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRIncident.m; sourceTree = "<group>"; };
-		F6CDE69B1B643FA200992F09 /* CANRPersonInvolved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANRPersonInvolved.h; sourceTree = "<group>"; };
-		F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANRPersonInvolved.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				F628A6811B656D1A005F9ECF /* CANRIncidentDetailsVC.m */,
 				F628A6831B6580D4005F9ECF /* CANRNotificationVC.h */,
 				F628A6841B6580D4005F9ECF /* CANRNotificationVC.m */,
+				F658E6641B683BDB00537B75 /* CANRReportReviewTVC.h */,
+				F658E6651B683BDB00537B75 /* CANRReportReviewTVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -176,10 +181,8 @@
 			children = (
 				F6CDE6501B642B5E00992F09 /* AppDelegate.h */,
 				F6CDE6511B642B5E00992F09 /* AppDelegate.m */,
-				F6CDE6981B643F9400992F09 /* CANRIncident.h */,
-				F6CDE6991B643F9400992F09 /* CANRIncident.m */,
-				F6CDE69B1B643FA200992F09 /* CANRPersonInvolved.h */,
-				F6CDE69C1B643FA200992F09 /* CANRPersonInvolved.m */,
+				F658E66D1B683CFE00537B75 /* CANRReportData.h */,
+				F658E66E1B683CFE00537B75 /* CANRReportData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -204,6 +207,8 @@
 		F6CDE6A11B64494C00992F09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F658E66A1B683CE400537B75 /* CANRReportDataCell.h */,
+				F658E66B1B683CE400537B75 /* CANRReportDataCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -346,10 +351,11 @@
 				F628A6821B656D1A005F9ECF /* CANRIncidentDetailsVC.m in Sources */,
 				F628A67C1B655F09005F9ECF /* CANRPersonsInvolvedVC.m in Sources */,
 				F6CB6AFA1B64DA590021FA40 /* CANRBackgroundInfoVC.m in Sources */,
+				F658E6661B683BDB00537B75 /* CANRReportReviewTVC.m in Sources */,
 				F628A6851B6580D4005F9ECF /* CANRNotificationVC.m in Sources */,
-				F6CDE69D1B643FA200992F09 /* CANRPersonInvolved.m in Sources */,
+				F658E66C1B683CE400537B75 /* CANRReportDataCell.m in Sources */,
+				F658E66F1B683CFE00537B75 /* CANRReportData.m in Sources */,
 				F6CDE6521B642B5E00992F09 /* AppDelegate.m in Sources */,
-				F6CDE69A1B643F9400992F09 /* CANRIncident.m in Sources */,
 				F6CDE64F1B642B5E00992F09 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

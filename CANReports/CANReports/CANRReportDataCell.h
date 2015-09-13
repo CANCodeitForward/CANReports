@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CANRReportData.h"
+
 
 @interface CANRReportDataCell : UITableViewCell
+
+-(void)configureWithReportData:(CANRReportData *)data;
 
 @end

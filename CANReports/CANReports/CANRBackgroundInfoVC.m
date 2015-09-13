@@ -46,36 +46,36 @@
     
     
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerName" rowType:XLFormRowDescriptorTypeText];
+    [providerSection addFormRow:providerRow];
     [providerRow.cellConfigAtConfigure setObject:@"Provider Name" forKey:@"textField.placeholder"];
     providerRow.value = @"Canucks Autism Network";
     providerRow.required = YES;
-    [providerSection addFormRow:providerRow];
     
     
     // FIX THE FORMATTING OF ADDED PHONE NUMBER
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerPhone" rowType:XLFormRowDescriptorTypePhone];
+    [providerSection addFormRow:providerRow];
     [providerRow.cellConfigAtConfigure setObject:@"Provider Phone" forKey:@"textField.placeholder"];
     providerRow.value = @"604-685-4049";
     providerRow.required = YES;
-    [providerSection addFormRow:providerRow];
     
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerAddress" rowType:XLFormRowDescriptorTypeText];
+    [providerSection addFormRow:providerRow];
     [providerRow.cellConfigAtConfigure setObject:@"Provider Address" forKey:@"textField.placeholder"];
     providerRow.value = @"101-2020 Yukon Street";
     providerRow.required = YES;
-    [providerSection addFormRow:providerRow];
     
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerCityProvince" rowType:XLFormRowDescriptorTypeText];
+    [providerSection addFormRow:providerRow];
     [providerRow.cellConfigAtConfigure setObject:@"Provider City Province" forKey:@"textField.placeholder"];
     providerRow.value = @"Vancouver, BC";
     providerRow.required = YES;
-    [providerSection addFormRow:providerRow];
     
     providerRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"providerPostalCode" rowType:XLFormRowDescriptorTypeText];
+    [providerSection addFormRow:providerRow];
     [providerRow.cellConfigAtConfigure setObject:@"Provider Postal Code" forKey:@"textField.placeholder"];
     providerRow.value = @"V5Y 3N8";
     providerRow.required = YES;
-    [providerSection addFormRow:providerRow];
 
     
     
@@ -87,30 +87,31 @@
     [backgroundForm addFormSection:locationSection];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentLocation" rowType:XLFormRowDescriptorTypeText];
+    [locationSection addFormRow:locationRow];
     [locationRow.cellConfigAtConfigure setObject:@"Location" forKey:@"textField.placeholder"];
     locationRow.required = YES;
     [locationSection addFormRow:locationRow];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentPhone" rowType:XLFormRowDescriptorTypePhone];
-    [locationRow.cellConfigAtConfigure setObject:@"Phone" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
+    [locationRow.cellConfigAtConfigure setObject:@"Phone" forKey:@"textField.placeholder"];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentProgram" rowType:XLFormRowDescriptorTypeText];
+    [locationSection addFormRow:locationRow];
     [locationRow.cellConfigAtConfigure setObject:@"Program" forKey:@"textField.placeholder"];
     locationRow.required = YES;
-    [locationSection addFormRow:locationRow];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentAddress" rowType:XLFormRowDescriptorTypeText];
-    [locationRow.cellConfigAtConfigure setObject:@"Address" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
+    [locationRow.cellConfigAtConfigure setObject:@"Address" forKey:@"textField.placeholder"];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentCityProvince" rowType:XLFormRowDescriptorTypeText];
-    [locationRow.cellConfigAtConfigure setObject:@"City, Province" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
+    [locationRow.cellConfigAtConfigure setObject:@"City, Province" forKey:@"textField.placeholder"];
     
     locationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentPostalCode" rowType:XLFormRowDescriptorTypeText];
-    [locationRow.cellConfigAtConfigure setObject:@"Postal Code" forKey:@"textField.placeholder"];
     [locationSection addFormRow:locationRow];
+    [locationRow.cellConfigAtConfigure setObject:@"Postal Code" forKey:@"textField.placeholder"];
     
     self.form = backgroundForm;
     

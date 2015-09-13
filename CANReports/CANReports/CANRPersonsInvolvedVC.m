@@ -48,22 +48,22 @@
     
     
     personRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"personInvolved" rowType:XLFormRowDescriptorTypeText];
+    [personsSection addFormRow:personRow];
     [personRow.cellConfigAtConfigure setObject:@"Name of Person" forKey:@"textField.placeholder"];
     personRow.required = YES;
-    [personsSection addFormRow:personRow];
     
     
     personRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"personBirthdate" rowType:XLFormRowDescriptorTypeDateInline title:@"Birthdate"];
-    personRow.value = [NSDate new];
     [personsSection addFormRow:personRow];
+    personRow.value = [NSDate new];
     
     // coming up in dictionary as pointer address. FIX THIS
     personRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"personGender" rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Gender"];
+    [personsSection addFormRow:personRow];
     personRow.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Male"],
                             [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Female"],
                             ];
     personRow.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@""];
-    [personsSection addFormRow:personRow];
     
     
     

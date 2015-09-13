@@ -8,16 +8,25 @@
 
 #import "CANRReportDataCell.h"
 
+@interface CANRReportDataCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *rowNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rowDataLabel;
+
+@end
+
+
 @implementation CANRReportDataCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)configureWithReportData:(CANRReportData *)data{
+    self.rowNameLabel.text = data.label;
+    if (data.data) {
+        self.rowDataLabel.text = data.data;
+    }
+    else{
+        self.rowDataLabel.text = @" ";
+    }
 }
 
 @end

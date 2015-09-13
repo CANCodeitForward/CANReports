@@ -8,8 +8,12 @@
 
 #import "CANRNotificationVC.h"
 #import "XLForm.h"
+#import "CANRReportData.h"
 
 @interface CANRNotificationVC ()
+
+@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
+@property (strong, nonatomic) NSMutableArray *reportArray;
 
 @end
 
@@ -47,30 +51,30 @@
     [notificationForm addFormSection:notificationSection];
     
     notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyNotified" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Family Notified"];
-    notificationRow.value = @0;
     [notificationSection addFormRow:notificationRow];
+    notificationRow.value = @0;
     
     
     // Family Member Notified
     notificationSection = [XLFormSectionDescriptor formSectionWithTitle:@"Family Member Notified"];
-    notificationSection.hidden = [NSString stringWithFormat:@"$%@==0", @"familyNotified"];
     [notificationForm addFormSection:notificationSection];
+    notificationSection.hidden = [NSString stringWithFormat:@"$%@==0", @"familyNotified"];
     
     notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyNotifiedAtDateTime" rowType:XLFormRowDescriptorTypeDateTimeInline title:@"When?"];
-    notificationRow.value = [NSDate new];
     [notificationSection addFormRow:notificationRow];
+    notificationRow.value = [NSDate new];
     
     notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyMemberNotified" rowType:XLFormRowDescriptorTypeText];
-    [notificationRow.cellConfigAtConfigure setObject:@"Family Member Notified" forKey:@"textField.placeholder"];
     [notificationSection addFormRow:notificationRow];
+    [notificationRow.cellConfigAtConfigure setObject:@"Family Member Notified" forKey:@"textField.placeholder"];
     
     notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyMemberRelationship" rowType:XLFormRowDescriptorTypeText];
-    [notificationRow.cellConfigAtConfigure setObject:@"Relationship" forKey:@"textField.placeholder"];
     [notificationSection addFormRow:notificationRow];
+    [notificationRow.cellConfigAtConfigure setObject:@"Relationship" forKey:@"textField.placeholder"];
     
     notificationRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"familyMemberPhone" rowType:XLFormRowDescriptorTypePhone];
-    [notificationRow.cellConfigAtConfigure setObject:@"Phone Number" forKey:@"textField.placeholder"];
     [notificationSection addFormRow:notificationRow];
+    [notificationRow.cellConfigAtConfigure setObject:@"Phone Number" forKey:@"textField.placeholder"];
     
     
     
@@ -82,12 +86,12 @@
     [notificationForm addFormSection:reporterSection];
     
     reporterRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"reporterName" rowType:XLFormRowDescriptorTypeText];
-    [reporterRow.cellConfigAtConfigure setObject:@"Reporter" forKey:@"textField.placeholder"];
     [reporterSection addFormRow:reporterRow];
+    [reporterRow.cellConfigAtConfigure setObject:@"Reporter" forKey:@"textField.placeholder"];
     
     reporterRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"reporterPosition" rowType:XLFormRowDescriptorTypeText];
-    [reporterRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
     [reporterSection addFormRow:reporterRow];
+    [reporterRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
     
     
     
@@ -99,12 +103,12 @@
     [notificationForm addFormSection:witessSection];
     
     witnessRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"witnessName" rowType:XLFormRowDescriptorTypeText];
-    [witnessRow.cellConfigAtConfigure setObject:@"Witness" forKey:@"textField.placeholder"];
     [witessSection addFormRow:witnessRow];
+    [witnessRow.cellConfigAtConfigure setObject:@"Witness" forKey:@"textField.placeholder"];
     
     witnessRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"witnessPosition" rowType:XLFormRowDescriptorTypeText];
-    [witnessRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
     [witessSection addFormRow:witnessRow];
+    [witnessRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
     
     
     
@@ -116,13 +120,13 @@
     [notificationForm addFormSection:supervisorSection];
     
     supervisorRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"supervisorName" rowType:XLFormRowDescriptorTypeText];
-    [supervisorRow.cellConfigAtConfigure setObject:@"Supervisor" forKey:@"textField.placeholder"];
     [supervisorSection addFormRow:supervisorRow];
+    [supervisorRow.cellConfigAtConfigure setObject:@"Supervisor" forKey:@"textField.placeholder"];
     
     supervisorRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"supervisorPosition" rowType:XLFormRowDescriptorTypeText];
-    [supervisorRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
     [supervisorSection addFormRow:supervisorRow];
-    
+    [supervisorRow.cellConfigAtConfigure setObject:@"Position" forKey:@"textField.placeholder"];
+
     
     
     self.form = notificationForm;
@@ -133,36 +137,49 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
+}
+
+
+-(void)makeReportArray{
+    NSMutableDictionary *reportDictionary = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    NSLog(@"%@", reportDictionary);
+    self.reportArray = [[NSMutableArray alloc] init];
+    [reportDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+        NSString *rowLabel = key;
+        NSString *rowValue;
+        if (obj != [NSNull null]) {
+            rowValue = obj;
+        }
+        else {
+            rowValue = @" ";
+        }
+        CANRReportData *rowData = [[CANRReportData alloc] initWithLabel:rowLabel andData:rowValue];
+        [self.reportArray addObject:rowData];
+    }];
+}
+
+
+- (IBAction)didTapSaveButton:(id)sender {
+    [self makeReportArray];
+    [self performSegueWithIdentifier:@"showReportReview" sender:self];
 }
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
     if ([[segue identifier] isEqualToString:@"showReportReview"]) {
-        NSDictionary *notificationDictionary = [self makeNotificationDictionary];
-        NSDictionary *administrationDictionary = [self makeAdministrationDictionary];
-        
-        [self.dataDictionary setObject:notificationDictionary forKey:@"notification"];
-        [self.dataDictionary setObject:administrationDictionary forKey:@"administration"];
-    
-        [[segue destinationViewController] setDataDictionary:self.dataDictionary];
-    
+
+        [[segue destinationViewController] setReportArray:self.reportArray];
     }
 }
 
 
--(NSMutableDictionary*)makeNotificationDictionary{
-    NSMutableDictionary *notification = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
-    [notification removeObjectsForKeys:@[@"reporterName", @"reporterPosition", @"supervisorName", @"supervisorPosition", @"witnessName", @"witnessPosition"]];
-    return notification;
-}
-
--(NSMutableDictionary*)makeAdministrationDictionary{
-    NSMutableDictionary *administration = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
-    [administration removeObjectsForKeys:@[@"familyMemberNotified", @"familyMemberPhone", @"familyMemberRelationship", @"familyNotified", @"familyNotifiedAtDateTime"]];
-    return administration;
-}
-
-
 @end
+
+
+
+
+
+
+
+

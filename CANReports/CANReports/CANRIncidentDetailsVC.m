@@ -76,9 +76,9 @@
     [detailsOfIncidentForm addFormSection:typeOfIncidentSection];
     
     typeOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"typeOfIncident" rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Type of Incident"];
+    [typeOfIncidentSection addFormRow:typeOfIncidentRow];
     typeOfIncidentRow.selectorOptions = @[@"Physical Abuse", @"Sexual Abuse", @"Emotional Abuse", @"Neglect", @"Financial Abuse", @"Unexpected Illness", @"Disease Outbreak", @"Death", @"Fall", @"Motor Vehicle Injury", @"Other Injury", @"Poisoning", @"Agressive/Unusual Behaviour", @"Missing Person", @"Medication Error"];
     typeOfIncidentRow.valueTransformer = [NSArrayValueTrasformer class];
-    [typeOfIncidentSection addFormRow:typeOfIncidentRow];
     
     
     
@@ -90,17 +90,17 @@
     [detailsOfIncidentForm addFormSection:detailsOfIncidentSection];
     
     detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentDate" rowType:XLFormRowDescriptorTypeDateInline title:@"Date"];
-    detailsOfIncidentRow.value = [NSDate new];
     [detailsOfIncidentSection addFormRow:detailsOfIncidentRow];
+    detailsOfIncidentRow.value = [NSDate new];
     
     detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentTime" rowType:XLFormRowDescriptorTypeTimeInline title:@"Time"];
-    detailsOfIncidentRow.value = [NSDate new];
     [detailsOfIncidentSection addFormRow:detailsOfIncidentRow];
+    detailsOfIncidentRow.value = [NSDate new];
     
     
     detailsOfIncidentRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"incidentDescription" rowType:XLFormRowDescriptorTypeTextView];
-    [detailsOfIncidentRow.cellConfigAtConfigure setObject:@"Description of Incident" forKey:@"textView.placeholder"];
     [detailsOfIncidentSection addFormRow:detailsOfIncidentRow];
+    [detailsOfIncidentRow.cellConfigAtConfigure setObject:@"Description of Incident" forKey:@"textView.placeholder"];
     
     
     
@@ -113,33 +113,33 @@
     
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"firstAidGiven" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"First Aid Given"];
-    actionTakenRow.value = @0;
     [actionTakenSection addFormRow:actionTakenRow];
+    actionTakenRow.value = @0;
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"firstAidGivenBy" rowType:XLFormRowDescriptorTypeText];
+    [actionTakenSection addFormRow:actionTakenRow];
     actionTakenRow.hidden = [NSString stringWithFormat:@"$%@==0", @"firstAidGiven"];
     [actionTakenRow.cellConfigAtConfigure setObject:@"First Aid Given By" forKey:@"textField.placeholder"];
-    [actionTakenSection addFormRow:actionTakenRow];
 
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"clinicVisited" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Clinic"];
-    actionTakenRow.value = @0;
     [actionTakenSection addFormRow:actionTakenRow];
+    actionTakenRow.value = @0;
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"clinicDoctorName" rowType:XLFormRowDescriptorTypeText];
-    actionTakenRow.hidden = [NSString stringWithFormat:@"$%@==0", @"visitedClinic"];
-    [actionTakenRow.cellConfigAtConfigure setObject:@"Clinic Doctor Name" forKey:@"textField.placeholder"];
     [actionTakenSection addFormRow:actionTakenRow];
+    actionTakenRow.hidden = [NSString stringWithFormat:@"$%@==0", @"clinicVisited"];
+    [actionTakenRow.cellConfigAtConfigure setObject:@"Clinic Doctor Name" forKey:@"textField.placeholder"];
     
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"hospitalVisited" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"Visited Hospital"];
-    actionTakenRow.value = @0;
     [actionTakenSection addFormRow:actionTakenRow];
+    actionTakenRow.value = @0;
     
     actionTakenRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"hospitalDoctorName" rowType:XLFormRowDescriptorTypeText];
-    actionTakenRow.hidden = [NSString stringWithFormat:@"$%@==0", @"visitedHospital"];
-    [actionTakenRow.cellConfigAtConfigure setObject:@"Hospital Doctor Name" forKey:@"textField.placeholder"];
     [actionTakenSection addFormRow:actionTakenRow];
+    actionTakenRow.hidden = [NSString stringWithFormat:@"$%@==0", @"hospitalVisited"];
+    [actionTakenRow.cellConfigAtConfigure setObject:@"Hospital Doctor Name" forKey:@"textField.placeholder"];
     
     
     self.form = detailsOfIncidentForm;

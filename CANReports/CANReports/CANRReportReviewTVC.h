@@ -10,4 +10,6 @@
 
 @interface CANRReportReviewTVC : UITableViewController
 
+@property (strong, nonatomic) NSArray *reportArray;
+
 @end

@@ -66,7 +66,7 @@
 {
     XLFormDescriptor *detailsOfIncidentForm = [XLFormDescriptor formDescriptorWithTitle:@"Incident Details"];
     
-    //    backgroundForm.assignFirstResponderOnShow = YES;
+//    detailsOfIncidentForm.assignFirstResponderOnShow = YES;
     
     // Type of Incident
     XLFormSectionDescriptor *typeOfIncidentSection;

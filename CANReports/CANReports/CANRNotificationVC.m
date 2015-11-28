@@ -12,7 +12,6 @@
 
 @interface CANRNotificationVC ()
 
-@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 @property (strong, nonatomic) NSMutableArray *reportArray;
 
 @end
@@ -41,7 +40,7 @@
 {
     XLFormDescriptor *notificationForm = [XLFormDescriptor formDescriptorWithTitle:@"Notification"];
     
-    //    backgroundForm.assignFirstResponderOnShow = YES;
+//    notificationForm.assignFirstResponderOnShow = YES;
     
     // Was Family Notified
     XLFormSectionDescriptor *notificationSection;
@@ -141,23 +140,63 @@
 
 
 -(void)makeReportArray{
-    NSMutableDictionary *reportDictionary = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
-    NSLog(@"%@", reportDictionary);
-    self.reportArray = [[NSMutableArray alloc] init];
-    [reportDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
-        NSString *rowLabel = key;
-        NSString *rowValue;
-        if (obj != [NSNull null]) {
-            rowValue = obj;
-        }
-        else {
-            rowValue = @" ";
-        }
-        CANRReportData *rowData = [[CANRReportData alloc] initWithLabel:rowLabel andData:rowValue];
-        [self.reportArray addObject:rowData];
+    
+    NSDictionary *notificationDictionary = [self makeNotificationDictionary];
+    [self.dataDictionary setObject:notificationDictionary forKey:@"notificationGiven"];
+    self.reportArray = [NSMutableArray array];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    
+    [self.dataDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *outerKey, NSDictionary *dict, BOOL *stop) {
+        [dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
+            
+            if (!([obj isKindOfClass:[NSNull class]] || ([obj isKindOfClass:[NSString class]] && [[obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]))) {
+
+                if ([obj isKindOfClass:[XLFormOptionsObject class]]) {
+                    obj = [((XLFormOptionsObject *)obj) formValue];
+                }
+                if ([obj isKindOfClass:[NSNumber class]]) {
+                    obj = ([((NSNumber *)obj) boolValue] ? @"Yes" : @"No");
+                }
+                if ([obj isKindOfClass:[NSDate class]]) {
+                    obj = [formatter stringFromDate:obj];
+                }
+                if ([obj isKindOfClass:[NSArray class]]){
+                    obj = [obj componentsJoinedByString:@", "];
+                }
+                
+                NSMutableString *newKey = [NSMutableString string];
+                
+                for (NSInteger i=0; i<key.length; i++){
+                    NSString *character = [key substringWithRange:NSMakeRange(i, 1)];
+                    if ([character rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound) {
+                        [newKey appendString:@" "];
+                    }
+                    [newKey appendString:character];
+                }
+                
+                key = [newKey capitalizedString];
+                
+                NSLog(@"%@ --> %@: '%@'", [obj class], key, obj);
+                
+                NSString *rowLabel = key;
+                NSString *rowValue = obj;
+                CANRReportData *rowData;
+                rowData = [[CANRReportData alloc] initWithLabel:rowLabel andData:rowValue];
+                [self.reportArray addObject:rowData];
+                
+            }
+            
+        }];
     }];
+    
 }
 
+-(NSMutableDictionary*)makeNotificationDictionary{
+    NSMutableDictionary *notification = [NSMutableDictionary dictionaryWithDictionary:[self formValues]];
+    return notification;
+}
 
 - (IBAction)didTapSaveButton:(id)sender {
     [self makeReportArray];
@@ -166,7 +205,7 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    NSLog(@"%@", self.dataDictionary);
     if ([[segue identifier] isEqualToString:@"showReportReview"]) {
 
         [[segue destinationViewController] setReportArray:self.reportArray];

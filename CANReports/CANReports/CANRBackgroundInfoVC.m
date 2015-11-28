@@ -130,7 +130,7 @@
     if ([[segue identifier] isEqualToString:@"showPersonsInvolved"]) {
         NSDictionary *providerDictionary = [self makeProviderDictionary];
         NSDictionary *incidentDictionary = [self makeIncidentDictionary];
-        
+
         [self.dataDictionary setObject:providerDictionary forKey:@"provider"];
         [self.dataDictionary setObject:incidentDictionary forKey:@"incident"];
         

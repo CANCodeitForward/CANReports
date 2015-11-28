@@ -37,7 +37,7 @@
 {
     XLFormDescriptor *personsForm = [XLFormDescriptor formDescriptorWithTitle:@"Person(s) Involved"];
     
-    //    backgroundForm.assignFirstResponderOnShow = YES;
+//    personsForm.assignFirstResponderOnShow = YES;
     
     // Person(s) Involved
     XLFormSectionDescriptor *personsSection;
@@ -60,10 +60,10 @@
     // coming up in dictionary as pointer address. FIX THIS
     personRow = [XLFormRowDescriptor formRowDescriptorWithTag:@"personGender" rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Gender"];
     [personsSection addFormRow:personRow];
-    personRow.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Male"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Female"],
+    personRow.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@("Male") displayText:@"Male"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@("Female") displayText:@"Female"],
                             ];
-    personRow.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@""];
+    personRow.value = [XLFormOptionsObject formOptionsObjectWithValue:@("") displayText:@""];
     
     
     
@@ -84,7 +84,7 @@
     
     if ([[segue identifier] isEqualToString:@"showIncidentDetails"]) {
         NSDictionary *personsDictionary = [self makePersonsDictionary];
-
+ 
         [self.dataDictionary setObject:personsDictionary forKey:@"persons"];
         
         [[segue destinationViewController] setDataDictionary:self.dataDictionary];

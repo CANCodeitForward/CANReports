@@ -12,5 +12,6 @@
 
 @interface CANRNotificationVC : XLFormViewController
 
+@property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 
 @end

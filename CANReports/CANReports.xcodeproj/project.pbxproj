@@ -227,6 +227,7 @@
 				F6CDE6461B642B5D00992F09 /* Frameworks */,
 				F6CDE6471B642B5D00992F09 /* Resources */,
 				C13E4516FB36D7B5A4DA515D /* Copy Pods Resources */,
+				FCF4C03CB0C4E387E2EBB58B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,6 +342,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANReports/Pods-CANReports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCF4C03CB0C4E387E2EBB58B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CANReports/Pods-CANReports-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

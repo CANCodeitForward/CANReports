@@ -17,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpTableView];
+}
+
+- (void)setUpTableView {
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - Table view data source

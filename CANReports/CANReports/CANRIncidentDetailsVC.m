@@ -150,7 +150,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
 }
 
 

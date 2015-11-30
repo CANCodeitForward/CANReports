@@ -10,6 +10,6 @@
 
 @interface CANRReportReviewTVC : UITableViewController
 
-@property (strong, nonatomic) NSArray *reportArray;
+@property (strong, nonatomic) NSDictionary *reportDictionary;
 
 @end

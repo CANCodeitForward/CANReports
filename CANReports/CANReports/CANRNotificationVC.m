@@ -12,7 +12,7 @@
 
 @interface CANRNotificationVC ()
 
-@property (strong, nonatomic) NSMutableArray *reportArray;
+@property (strong, nonatomic) NSMutableDictionary *reportDictionary;
 
 @end
 
@@ -139,16 +139,20 @@
 }
 
 
--(void)makeReportArray{
+-(void)makeReportDictionary{
     
     NSDictionary *notificationDictionary = [self makeNotificationDictionary];
     [self.dataDictionary setObject:notificationDictionary forKey:@"notificationGiven"];
-    self.reportArray = [NSMutableArray array];
+    
+    self.reportDictionary = [NSMutableDictionary dictionary];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterShortStyle;
     
     [self.dataDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *outerKey, NSDictionary *dict, BOOL *stop) {
+        
+        NSMutableArray *reportArray = [NSMutableArray array];
+        
         [dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
             
             if (!([obj isKindOfClass:[NSNull class]] || ([obj isKindOfClass:[NSString class]] && [[obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]))) {
@@ -166,17 +170,8 @@
                     obj = [obj componentsJoinedByString:@", "];
                 }
                 
-                NSMutableString *newKey = [NSMutableString string];
-                
-                for (NSInteger i=0; i<key.length; i++){
-                    NSString *character = [key substringWithRange:NSMakeRange(i, 1)];
-                    if ([character rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound) {
-                        [newKey appendString:@" "];
-                    }
-                    [newKey appendString:character];
-                }
-                
-                key = [newKey capitalizedString];
+                key = [self makeCapitalized:key];
+
                 
                 NSLog(@"%@ --> %@: '%@'", [obj class], key, obj);
                 
@@ -184,13 +179,32 @@
                 NSString *rowValue = obj;
                 CANRReportData *rowData;
                 rowData = [[CANRReportData alloc] initWithLabel:rowLabel andData:rowValue];
-                [self.reportArray addObject:rowData];
+                [reportArray addObject:rowData];
                 
             }
             
         }];
+        
+        outerKey = [self makeCapitalized:outerKey];
+        
+        [self.reportDictionary setValue:reportArray forKey:outerKey];
+        
     }];
     
+}
+
+-(NSString*)makeCapitalized:(NSString*)string{
+    NSMutableString *newString = [NSMutableString string];
+    
+    for (NSInteger i=0; i<string.length; i++){
+        NSString *character = [string substringWithRange:NSMakeRange(i, 1)];
+        if ([character rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]].location != NSNotFound) {
+            [newString appendString:@" "];
+        }
+        [newString appendString:character];
+    }
+    
+    return [newString capitalizedString];
 }
 
 -(NSMutableDictionary*)makeNotificationDictionary{
@@ -198,17 +212,17 @@
     return notification;
 }
 
-- (IBAction)didTapSaveButton:(id)sender {
-    [self makeReportArray];
+- (IBAction)didTapSaveButton:(id)sender{
+    [self makeReportDictionary];
     [self performSegueWithIdentifier:@"showReportReview" sender:self];
 }
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"%@", self.dataDictionary);
+    
     if ([[segue identifier] isEqualToString:@"showReportReview"]) {
 
-        [[segue destinationViewController] setReportArray:self.reportArray];
+        [[segue destinationViewController] setReportDictionary:self.reportDictionary];
     }
 }
 
